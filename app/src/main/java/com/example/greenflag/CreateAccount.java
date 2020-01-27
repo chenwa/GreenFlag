@@ -3,6 +3,7 @@ package com.example.greenflag;
 import androidx.annotation.DrawableRes;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -21,6 +22,10 @@ public class CreateAccount extends AppCompatActivity {
     String pwd;
     String pwdRepeat;
 
+    Boolean emBool;
+    Boolean pwdBool;
+    Boolean pwdRepeatBool;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +34,7 @@ public class CreateAccount extends AppCompatActivity {
         email = findViewById(R.id.activity_create_account_til_email);
         password = findViewById(R.id.activity_create_account_til_password);
         passwordRepeat = findViewById(R.id.activity_create_account_til_password_repeat);
+        btn = findViewById(R.id.activity_create_account_btn_next);
 
         email.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -36,11 +42,20 @@ public class CreateAccount extends AppCompatActivity {
                 if (!hasFocus) {
                     em = email.getText().toString();
                     if (ValidEmail.isValid(em)) {
-                        email.setCompoundDrawablesWithIntrinsicBounds(0,0,
-                                R.drawable.tick_2x,0);
+                        email.setCompoundDrawablesWithIntrinsicBounds(0, 0,
+                                R.drawable.tick_2x, 0);
+                        emBool = true;
                     } else {
-                        email.setCompoundDrawablesWithIntrinsicBounds(0,0,
-                                R.drawable.cross_2x,0);
+                        email.setCompoundDrawablesWithIntrinsicBounds(0, 0,
+                                R.drawable.cross_2x, 0);
+                        emBool = false;
+                    }
+
+                    // Next button status
+                    if (emBool && pwdBool && pwdRepeatBool) {
+                        btn.setEnabled(true);
+                    } else {
+                        btn.setEnabled(false);
                     }
                 }
             }
@@ -54,9 +69,18 @@ public class CreateAccount extends AppCompatActivity {
                     if (ValidPassword.isValid(pwd)) {
                         password.setCompoundDrawablesWithIntrinsicBounds(0,0,
                                 R.drawable.tick_2x,0);
+                        pwdBool = true;
                     } else {
                         password.setCompoundDrawablesWithIntrinsicBounds(0,0,
                                 R.drawable.cross_2x,0);
+                        pwdBool = false;
+                    }
+
+                    // Next button status
+                    if (emBool && pwdBool && pwdRepeatBool) {
+                        btn.setEnabled(true);
+                    } else {
+                        btn.setEnabled(false);
                     }
                 }
             }
@@ -67,16 +91,31 @@ public class CreateAccount extends AppCompatActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     pwdRepeat = passwordRepeat.getText().toString();
-                    if (pwdRepeat.equals(pwd)) {
+                    if (pwdRepeat.equals(pwd) && ValidPassword.isValid(pwdRepeat)) {
                         passwordRepeat.setCompoundDrawablesWithIntrinsicBounds(0,0,
                                 R.drawable.tick_2x,0);
+                        pwdRepeatBool = true;
                     } else {
                         passwordRepeat.setCompoundDrawablesWithIntrinsicBounds(0,0,
                                 R.drawable.cross_2x,0);
+                        pwdRepeatBool = false;
+                    }
+
+                    // Next button status
+                    if (emBool && pwdBool && pwdRepeatBool) {
+                        btn.setEnabled(true);
+                    } else {
+                        btn.setEnabled(false);
                     }
                 }
             }
         });
 
+    }
+
+    // Navigates us to the info activity
+    public void info (View view) {
+        Intent intent = new Intent(this, Info.class);
+        startActivity(intent);
     }
 }

@@ -14,4 +14,6 @@
     <string name="activity_create_title">Create an account</string>
     <string name="create_account_repeat_password">Repeat password</string>
     <string name="create_account_create_password">Create password</string>
+    <string name="create_account_btn_text">Next</string>
+    <string name="create_account_email_err">Email is invalid</string>
 </resources>

@@ -16,7 +16,9 @@
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no"
+        tools:ignore="LabelFor" />
 
     <EditText
         android:id="@+id/activity_create_account_til_password"
@@ -27,7 +29,8 @@
         android:layout_marginTop="120dp"
         app:layout_constraintStart_toStartOf="@id/activity_create_account_til_email"
         app:layout_constraintTop_toTopOf="@id/activity_create_account_til_email"
-        android:hint="@string/create_account_hint"/>
+        android:hint="@string/create_account_hint"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/activity_create_account_til_password_repeat"
@@ -37,7 +40,9 @@
         android:background="#FFFFFF"
         android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="@id/activity_create_account_til_password"
-        app:layout_constraintTop_toTopOf="@id/activity_create_account_til_password" />
+        app:layout_constraintTop_toTopOf="@id/activity_create_account_til_password"
+        android:importantForAutofill="no"
+        tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/activity_create__account_textView"
@@ -46,31 +51,9 @@
         android:layout_marginTop="20dp"
         android:text="@string/create_account_criteria"
         android:textColor="#FFFFFF"
-        android:textSize="18dp"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/activity_create_account_til_password_repeat"
         app:layout_constraintTop_toBottomOf="@+id/activity_create_account_til_password_repeat" />
-
-    <ImageView
-        android:id="@+id/activity_create__account_imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="292dp"
-        android:layout_marginTop="8dp"
-        android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="@+id/activity_create_account_til_password"
-        app:layout_constraintTop_toTopOf="@+id/activity_create_account_til_password"
-        app:srcCompat="@drawable/tick_2x" />
-
-    <ImageView
-        android:id="@+id/activity_create__account_imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="292dp"
-        android:layout_marginTop="8dp"
-        android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="@+id/activity_create_account_til_password_repeat"
-        app:layout_constraintTop_toTopOf="@+id/activity_create_account_til_password_repeat"
-        app:srcCompat="@drawable/tick_2x" />
 
     <View
         android:id="@+id/divider"
@@ -90,7 +73,7 @@
         android:gravity="center"
         android:text="@string/activity_create_title"
         android:textColor="#FFFFFF"
-        android:textSize="30dp"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -99,9 +82,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="TextView"
         android:textColor="#FFFFFF"
-        android:textSize="18dp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/activity_create_account_til_email"
         app:layout_constraintStart_toStartOf="@+id/activity_create_account_til_email"
         tools:text="Email address" />
@@ -110,9 +92,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="TextView"
         android:textColor="#FFFFFF"
-        android:textSize="18dp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/activity_create_account_til_password"
         app:layout_constraintStart_toStartOf="@+id/activity_create_account_til_password"
         tools:text="@string/create_account_create_password" />
@@ -122,12 +103,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="TextView"
         android:textColor="#FFFFFF"
-        android:textSize="18dp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/activity_create_account_til_password_repeat"
         app:layout_constraintStart_toStartOf="@+id/activity_create_account_til_password_repeat"
         tools:text="@string/create_account_repeat_password" />
 
+    <!-- Error text view boxes -->
+
+    <Button
+        android:id="@+id/activity_create_account_btn_next"
+        android:layout_width="322dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="44dp"
+        android:background="@drawable/gradient_button_background_2x"
+        android:text="@string/create_account_btn_text"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:enabled="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="info"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
