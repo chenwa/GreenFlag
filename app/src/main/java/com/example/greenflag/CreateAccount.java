@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -22,9 +23,9 @@ public class CreateAccount extends AppCompatActivity {
     String pwd;
     String pwdRepeat;
 
-    Boolean emBool;
-    Boolean pwdBool;
-    Boolean pwdRepeatBool;
+    Boolean emBool = false;
+    Boolean pwdBool = false;
+    Boolean pwdRepeatBool = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
