@@ -17,10 +17,6 @@ public class CreateAccount extends AppCompatActivity {
     EditText passwordRepeat;
     Button btn;
 
-    ImageView img1;
-    ImageView img2;
-    ImageView img3;
-
     String em;
     String pwd;
     String pwdRepeat;
@@ -34,22 +30,18 @@ public class CreateAccount extends AppCompatActivity {
         password = findViewById(R.id.activity_create_account_til_password);
         passwordRepeat = findViewById(R.id.activity_create_account_til_password_repeat);
 
-        img1 = findViewById(R.id.activity_create__account_imageView1);
-        img2 = findViewById(R.id.activity_create__account_imageView2);
-        img3 = findViewById(R.id.activity_create__account_imageView3);
-
-
         email.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     em = email.getText().toString();
                     if (ValidEmail.isValid(em)) {
-                        img1.setImageResource(R.drawable.tick_2x);
+                        email.setCompoundDrawablesWithIntrinsicBounds(0,0,
+                                R.drawable.tick_2x,0);
                     } else {
-                        img1.setImageResource(R.drawable.cross_2x);
+                        email.setCompoundDrawablesWithIntrinsicBounds(0,0,
+                                R.drawable.cross_2x,0);
                     }
-                    img1.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -60,11 +52,12 @@ public class CreateAccount extends AppCompatActivity {
                 if (!hasFocus) {
                     pwd = password.getText().toString();
                     if (ValidPassword.isValid(pwd)) {
-                        img2.setImageResource(R.drawable.tick_2x);
+                        password.setCompoundDrawablesWithIntrinsicBounds(0,0,
+                                R.drawable.tick_2x,0);
                     } else {
-                        img2.setImageResource(R.drawable.cross_2x);
+                        password.setCompoundDrawablesWithIntrinsicBounds(0,0,
+                                R.drawable.cross_2x,0);
                     }
-                    img2.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -75,11 +68,12 @@ public class CreateAccount extends AppCompatActivity {
                 if (!hasFocus) {
                     pwdRepeat = passwordRepeat.getText().toString();
                     if (pwdRepeat.equals(pwd)) {
-                        img3.setImageResource(R.drawable.tick_2x);
+                        passwordRepeat.setCompoundDrawablesWithIntrinsicBounds(0,0,
+                                R.drawable.tick_2x,0);
                     } else {
-                        img3.setImageResource(R.drawable.cross_2x);
+                        passwordRepeat.setCompoundDrawablesWithIntrinsicBounds(0,0,
+                                R.drawable.cross_2x,0);
                     }
-                    img3.setVisibility(View.VISIBLE);
                 }
             }
         });

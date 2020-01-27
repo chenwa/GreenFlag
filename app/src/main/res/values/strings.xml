@@ -12,4 +12,6 @@
     </string>
     <string name="create_account_hint">See criteria below</string>
     <string name="activity_create_title">Create an account</string>
+    <string name="create_account_repeat_password">Repeat password</string>
+    <string name="create_account_create_password">Create password</string>
 </resources>

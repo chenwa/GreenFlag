@@ -51,17 +51,6 @@
         app:layout_constraintTop_toBottomOf="@+id/activity_create_account_til_password_repeat" />
 
     <ImageView
-        android:id="@+id/activity_create__account_imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="292dp"
-        android:layout_marginTop="8dp"
-        android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="@+id/activity_create_account_til_email"
-        app:layout_constraintTop_toTopOf="@+id/activity_create_account_til_email"
-        app:srcCompat="@drawable/tick_2x" />
-
-    <ImageView
         android:id="@+id/activity_create__account_imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -87,9 +76,10 @@
         android:id="@+id/divider"
         android:layout_width="409dp"
         android:layout_height="1dp"
+        android:layout_marginTop="68dp"
         android:background="#1FFFFFFF"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="72dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/activity_create_account_title" />
 
     <TextView
         android:id="@+id/activity_create_account_title"
@@ -103,5 +93,41 @@
         android:textSize="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/activity_create_account_tv_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/activity_create_account_til_email"
+        app:layout_constraintStart_toStartOf="@+id/activity_create_account_til_email"
+        tools:text="Email address" />
+    <TextView
+        android:id="@+id/activity_create_account_tv_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/activity_create_account_til_password"
+        app:layout_constraintStart_toStartOf="@+id/activity_create_account_til_password"
+        tools:text="@string/create_account_create_password" />
+
+    <TextView
+        android:id="@+id/activity_create_account_tv_password_repeat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/activity_create_account_til_password_repeat"
+        app:layout_constraintStart_toStartOf="@+id/activity_create_account_til_password_repeat"
+        tools:text="@string/create_account_repeat_password" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
