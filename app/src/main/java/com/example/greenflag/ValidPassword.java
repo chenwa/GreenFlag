@@ -5,12 +5,15 @@
 
 package com.example.greenflag;
 
+import android.util.Log;
+
 import java.lang.String;
 import java.lang.Character;
 
 public class ValidPassword {
 
     public static boolean isValid(String password) {
+
         //return true if and only if password:
 
         //1. has at least eight characters.
@@ -29,7 +32,7 @@ public class ValidPassword {
 
         char c;
 
-        for (int i = 0; i < password.length() - 1; i++) {
+        for (int i = 0; i <= password.length() - 1; i++) {
             c = password.charAt(i);
 
             if (Character.isDigit(c)) {

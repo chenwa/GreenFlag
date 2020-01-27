@@ -11,4 +11,5 @@
         Your password should have a minimum of 8 characters and contain at least one number, one uppercase and one lower case letter. You can use special characters."
     </string>
     <string name="create_account_hint">See criteria below</string>
+    <string name="activity_create_title">Create an account</string>
 </resources>
