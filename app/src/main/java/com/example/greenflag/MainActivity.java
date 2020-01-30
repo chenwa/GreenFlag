@@ -18,16 +18,6 @@ public class MainActivity extends AppCompatActivity {
         this.setContentView(R.layout.activity_main);
     }
 
-    /*
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        // Hide the action bar.
-        getSupportActionBar().hide();
-    }
-    */
-
     // Navigates us to the createAccount activity
     public void createAccount(View view) {
         Intent intent = new Intent(this, CreateAccount.class);

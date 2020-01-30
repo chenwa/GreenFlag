@@ -4,6 +4,165 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/black"
     tools:context=".Info">
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="68dp"
+        android:background="#1FFFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/activity_info_title" />
+
+    <TextView
+        android:id="@+id/activity_info_title"
+        android:layout_width="348dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="@string/enter_info"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="128dp"
+        android:layout_height="133dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/info_name"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <EditText
+        android:id="@+id/info_name"
+        android:layout_width="232dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:background="#FFFFFF"
+        android:hint="@string/name"
+        android:padding="8dp"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_info_title" />
+
+    <EditText
+        android:id="@+id/info_Username"
+        android:layout_width="232dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="20dp"
+        android:background="#FFFFFF"
+        android:hint="Username"
+        android:padding="8dp"
+        app:layout_constraintStart_toStartOf="@id/info_name"
+        app:layout_constraintTop_toBottomOf="@id/info_name" />
+
+    <EditText
+        android:id="@+id/info_password"
+        android:layout_width="232dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="20dp"
+        android:background="#FFFFFF"
+        android:hint="Password"
+        android:padding="8dp"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toStartOf="@id/info_Username"
+        app:layout_constraintTop_toBottomOf="@id/info_Username" />
+
+    <Button
+        android:id="@+id/activity_info_btn_change_photo"
+        android:layout_width="232dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="20dp"
+        android:width="232dp"
+        android:height="53dp"
+        android:background="@drawable/gradient_button_background_2x"
+        android:text="@string/change_photo"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@id/info_password"
+        app:layout_constraintTop_toBottomOf="@id/info_password" />
+
+    <EditText
+        android:id="@+id/info_age"
+        android:layout_width="232dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="20dp"
+        android:background="#FFFFFF"
+        android:hint="@string/age"
+        android:padding="8dp"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@id/activity_info_btn_change_photo"
+        app:layout_constraintTop_toBottomOf="@id/activity_info_btn_change_photo" />
+
+    <RadioGroup
+        android:id="@+id/info_radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/info_age"
+        app:layout_constraintTop_toBottomOf="@id/info_age"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/info_radio_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:text="Gender" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/info_radio_opt1"
+            android:layout_width="252dp"
+            android:layout_height="match_parent"
+            android:text="@string/female"
+            android:buttonTint="#FFFFFF"
+            android:textColor="#FFFFFF" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/info_radio_opt2"
+            android:layout_width="252dp"
+            android:layout_height="match_parent"
+            android:text="@string/male"
+            android:buttonTint="#FFFFFF"
+            android:textColor="#FFFFFF" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/info_radio_opt3"
+            android:layout_width="252dp"
+            android:layout_height="match_parent"
+            android:text="@string/not_specified"
+            android:buttonTint="#FFFFFF"
+            android:textColor="#FFFFFF" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/info_et_postal"
+        android:layout_width="232dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/postal_address_opt"
+        android:background="#FFFFFF"
+        android:inputType="textPostalAddress"
+        app:layout_constraintTop_toBottomOf="@id/info_radio_group"
+        app:layout_constraintStart_toStartOf="@id/info_radio_group" />
+
+    <Button
+        android:id="@+id/activity_info_btn_save"
+        android:layout_width="100dp"
+        android:layout_height="38dp"
+        android:width="232dp"
+        android:height="53dp"
+        android:background="@drawable/gradient_button_background_2x"
+        android:text="@string/save"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="@id/info_et_postal"
+        app:layout_constraintBottom_toBottomOf="@id/info_et_postal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/info_et_postal"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

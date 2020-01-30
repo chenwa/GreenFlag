@@ -16,4 +16,13 @@
     <string name="create_account_create_password">Create password</string>
     <string name="create_account_btn_text">Next</string>
     <string name="create_account_email_err">Email is invalid</string>
+    <string name="name">Name</string>
+    <string name="enter_info">Enter Info</string>
+    <string name="age">Age</string>
+    <string name="change_photo">Change photo</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="not_specified">Not Specified</string>
+    <string name="postal_address_opt">Postal Address (Opt)</string>
+    <string name="save">save</string>
 </resources>
