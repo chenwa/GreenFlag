@@ -31,7 +31,7 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="128dp"
+        android:layout_width="133dp"
         android:layout_height="133dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,9 +41,9 @@
     <EditText
         android:id="@+id/info_name"
         android:layout_width="232dp"
-        android:layout_height="53dp"
+        android:layout_height="40dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:background="#FFFFFF"
         android:hint="@string/name"
         android:padding="8dp"
@@ -54,7 +54,7 @@
     <EditText
         android:id="@+id/info_Username"
         android:layout_width="232dp"
-        android:layout_height="53dp"
+        android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:background="#FFFFFF"
         android:hint="Username"
@@ -65,7 +65,7 @@
     <EditText
         android:id="@+id/info_password"
         android:layout_width="232dp"
-        android:layout_height="53dp"
+        android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:background="#FFFFFF"
         android:hint="Password"
@@ -90,21 +90,36 @@
     <EditText
         android:id="@+id/info_age"
         android:layout_width="232dp"
-        android:layout_height="53dp"
+        android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:background="#FFFFFF"
         android:hint="@string/age"
         android:padding="8dp"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintStart_toStartOf="@id/activity_info_btn_change_photo"
         app:layout_constraintTop_toBottomOf="@id/activity_info_btn_change_photo" />
+
+    <!--
+    <DatePicker
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    -->
+    <Spinner
+        android:id="@+id/info_spinner_country"
+        android:layout_width="232dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="#FFFFFF"
+        android:entries="@array/info_countries_array"
+        app:layout_constraintStart_toStartOf="@id/info_age"
+        app:layout_constraintTop_toBottomOf="@id/info_age" />
 
     <RadioGroup
         android:id="@+id/info_radio_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/info_age"
-        app:layout_constraintTop_toBottomOf="@id/info_age"
+        app:layout_constraintStart_toStartOf="@id/info_spinner_country"
+        app:layout_constraintTop_toBottomOf="@id/info_spinner_country"
         android:layout_marginTop="20dp">
 
         <TextView
@@ -142,7 +157,7 @@
     <EditText
         android:id="@+id/info_et_postal"
         android:layout_width="232dp"
-        android:layout_height="53dp"
+        android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="@string/postal_address_opt"
@@ -164,5 +179,7 @@
         app:layout_constraintBottom_toBottomOf="@id/info_et_postal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/info_et_postal"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

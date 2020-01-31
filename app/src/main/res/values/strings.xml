@@ -25,4 +25,15 @@
     <string name="not_specified">Not Specified</string>
     <string name="postal_address_opt">Postal Address (Opt)</string>
     <string name="save">save</string>
+    <string-array name="info_countries_array">
+        <item>Not-Specified</item>
+        <item>Malaysia</item>
+        <item>United States</item>
+        <item>Indonesia</item>
+        <item>France</item>
+        <item>Italy</item>
+        <item>Singapore</item>
+        <item>New Zealand</item>
+        <item>India</item>
+    </string-array>
 </resources>
