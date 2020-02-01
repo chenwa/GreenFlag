@@ -113,6 +113,10 @@ public class CreateAccount extends AppCompatActivity {
     // Navigates us to the info activity
     public void info (View view) {
         Intent intent = new Intent(this, Info.class);
+
+        // intent.putExtra("email", em);
+        intent.putExtra("password", pwd);
+
         startActivity(intent);
     }
 }

@@ -127,7 +127,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
-            android:text="Gender" />
+            android:text="@string/gender" />
 
         <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/info_radio_opt1"
@@ -178,7 +178,8 @@
         app:layout_constraintTop_toTopOf="@id/info_et_postal"
         app:layout_constraintBottom_toBottomOf="@id/info_et_postal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/info_et_postal"/>
+        app:layout_constraintStart_toEndOf="@id/info_et_postal"
+        android:onClick="navigateToAccounts"/>
 
 
 

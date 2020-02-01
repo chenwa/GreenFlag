@@ -16,6 +16,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         this.setContentView(R.layout.activity_main);
+
+        // Initialize fake database
+        FakeDatabase.init();
     }
 
     // Navigates us to the createAccount activity
