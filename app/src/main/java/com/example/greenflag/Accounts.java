@@ -34,7 +34,7 @@ public class Accounts extends AppCompatActivity {
 
         // Enter user into our fake Database
 
-        User user = new User();
+        User user;
 
         user = getIntent().getParcelableExtra(Info.USER_INFO_KEY);
 
