@@ -77,24 +77,17 @@ public class Info extends AppCompatActivity {
         etPassword.setText(password);
 
         // Calendar
-        tvCalendar.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                final Calendar c = Calendar.getInstance();
-                final int year = c.get(Calendar.YEAR);
-                final int month = c.get(Calendar.MONTH);
-                final int day = c.get(Calendar.DAY_OF_MONTH);
-                picker = new DatePickerDialog(Info.this,
-                        new DatePickerDialog.OnDateSetListener() {
-                            @Override
-                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                                birthday = dayOfMonth + " " + (monthOfYear + 1) + " " + year;
-                                tvCalendar.setText(birthday);
-                            }
-                        }, year, month, day);
-                picker.show();
-            }
+        tvCalendar.setOnClickListener(v -> {
+            final Calendar c = Calendar.getInstance();
+            final int year = c.get(Calendar.YEAR);
+            final int month = c.get(Calendar.MONTH);
+            final int day = c.get(Calendar.DAY_OF_MONTH);
+            picker = new DatePickerDialog(Info.this,
+                    (view, year1, monthOfYear, dayOfMonth) -> {
+                        birthday = (monthOfYear + 1) + " " + dayOfMonth + " " + year1;
+                        tvCalendar.setText(birthday);
+                    }, year, month, day);
+            picker.show();
         });
 
         // Gender radio buttons

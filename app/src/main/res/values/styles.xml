@@ -8,6 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="windowNoTitle">true</item>
         <item name="android:fontFamily">@font/museosans_300</item>
+        <item name="android:datePickerStyle">@style/myDatePicker</item>
     </style>
-
+    <style name="myDatePicker" parent="android:Widget.Material.DatePicker">
+        <item name="android:datePickerMode">spinner</item>
+    </style>
 </resources>
