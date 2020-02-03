@@ -2,17 +2,21 @@ package com.example.greenflag;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class Info extends AppCompatActivity {
@@ -24,6 +28,9 @@ public class Info extends AppCompatActivity {
     EditText etPassword;
     Button btnChangePhoto;
     EditText etAge;
+
+    TextView tvCalendar;
+    DatePickerDialog picker;
 
     Spinner spinCountry;
     RadioGroup rgGender;
@@ -38,11 +45,11 @@ public class Info extends AppCompatActivity {
     private String userName;
     private String password;
     //private ImageView picture;
-    private String age;
-    private String birthday = "";
-    private String country = "";
-    private String gender = "Not specified";
-    private String postal = "";
+    private String age = "Age: N/A";
+    private String birthday = "Birthday: N/A";
+    private String country = "Country: N/A";
+    private String gender = "Gender: Not specified";
+    private String postal = "Postal: N/A";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +62,7 @@ public class Info extends AppCompatActivity {
         btnChangePhoto = findViewById(R.id.activity_info_btn_change_photo);
         etAge = findViewById(R.id.info_age);
 
+        tvCalendar = findViewById(R.id.activity_info_tv_datepicker);
         spinCountry = findViewById(R.id.info_spinner_country);
         rgGender = findViewById(R.id.info_radio_group);
         btnFemale = findViewById(R.id.info_radio_opt1);
@@ -68,6 +76,28 @@ public class Info extends AppCompatActivity {
 
         etPassword.setText(password);
 
+        // Calendar
+        tvCalendar.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                final Calendar c = Calendar.getInstance();
+                final int year = c.get(Calendar.YEAR);
+                final int month = c.get(Calendar.MONTH);
+                final int day = c.get(Calendar.DAY_OF_MONTH);
+                picker = new DatePickerDialog(Info.this,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                                birthday = dayOfMonth + " " + (monthOfYear + 1) + " " + year;
+                                tvCalendar.setText(birthday);
+                            }
+                        }, year, month, day);
+                picker.show();
+            }
+        });
+
+        // Gender radio buttons
         rgGender.setOnCheckedChangeListener((arg0, id) -> {
             switch (id) {
                 case R.id.info_radio_opt1:
